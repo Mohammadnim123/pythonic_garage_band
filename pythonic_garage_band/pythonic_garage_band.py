@@ -18,9 +18,17 @@ class Band():
         for i in Band.member_list:
             result+= f'{i.play_solos()}\n'
         return result
+    
+    @classmethod
+    def to_list(cls):
+        return cls.member_list
 
-    def to_list(self):
-        return Band.member_list
+    def __repr__(self):
+        return f"please dont write {self.name} like this use print to see more details"
+    
+    def __str__(self):
+        return f"welcome in  {self.name} band which consest of {Band.member_list}"
+
 
 
 
@@ -88,18 +96,19 @@ class Drummer(Musician):
 
 
 if __name__ == "__main__":
-  mohammad = Drummer('mohammad')
-  print(mohammad.name)
+#   mohammad = Drummer('mohammad')
+#   print(mohammad.name)
   nemrawi = Band('nemrawi')
-  ali = Band('ali')
+#   ali = Band('ali')
   nemrawi.add_members('jafar')
   nemrawi.add_members('9ob7y')
-  print(nemrawi.to_list())
+  print(nemrawi.__repr__())
+  print(nemrawi)
 #   print(Band.band_list)
-  abo_anwar = Musician('abo_anwar')
-  print(abo_anwar.play_solo())
-  shareef = Guitarist('shareef')
-  print(shareef)
+#   abo_anwar = Musician('abo_anwar')
+#   print(abo_anwar.play_solo())
+#   shareef = Guitarist('shareef')
+#   print(shareef)
 #   print(nemrawi.play_solos())
   
   
